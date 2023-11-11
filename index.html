@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="guessing game.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="number game icon.jpeg">
+  <title>Number Guessing Game</title>
+
+</head>
+
+<body>
+  <center>
+    <div class="heading">Number Guessing Game by <span class="name"> Abinesh Srinivasan</span></div>
+  </center>
+  <div class="about"><span class="about-word">About:</span><br>
+    Welcome to the Number Guessing Game!
+    Embark on a thrilling adventure of numbers and intuition! The Number Guessing Game puts your guessing skills to the
+    test
+    as you attempt to uncover the secret number hidden within a specific range. Will you hit the jackpot with your first
+    guess, or will you need to fine-tune your instincts?<br>
+    The excitement builds with each guess! Can you decipher the mystery number in the fewest attempts possible? Click
+    below
+    to kick off the game and prove that you're the ultimate number guesser!
+    Get ready for a numbers challenge that will keep you on the edge of your seat. Good luck!
+
+  </div>
+  <div class="container">
+    <div class="sub-heading">Guess a number from 1 to 10</div>
+    <div class="inputs">
+      <input id="number" placeholder="Type here" onkeydown="inputEnter()">
+      <button onclick="game()">Check</button>
+    </div>
+    <div id="information">Let's Play</div>
+    <div id="output">You have 10 chances</div>
+  </div>
+  <div class="my-info">
+    <p class="website-title">Check out my other websites:</p>
+    <center>
+      <a target="_blank" class="website w-1" href="https://abinesh-srinivasan.github.io/YouTube-AbineshSrinivasan/">YouTube Webpage Clone</a><br><br><br>
+      <a target="_blank" class="website w-2" href="https://abinesh-srinivasan.github.io/rock-paper-scissor-game/">Rock Paper Scissor Game</a>
+    </center>
+  </div>
+</body>
+<script>
+  input = document.getElementById("number")
+    info = document.getElementById("information")
+    score = document.getElementById("output")
+    total_score = 10
+    wrong_guess = 0
+    function inputEnter() {
+      if (event.key === 'Enter')
+        game()
+    }
+    function replay() {
+      input.value = null
+      info.textContent = "Let's Play"
+      total_score = 10
+      wrong_guess = 0
+      score.textContent = "You have " + total_score + " Chances"
+    }
+    function game() {
+      random = Math.floor(Math.random() * 10) + 1
+      if (input.value != random) {
+        wrong_guess++
+        info.textContent = "Wrong Guess: " + wrong_guess
+        total_score--
+        score.textContent = "You have " + total_score + " Chances"
+      }
+      if (input.value == random) {
+        alert("Congratulations! You Won a Game")
+        replay()
+      }
+      if (total_score == 0) {
+        alert("Oops! Try again")
+        replay()
+      }
+    }
+
+</script>
+
+</html>
