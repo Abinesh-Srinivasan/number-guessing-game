@@ -105,18 +105,6 @@ button {
     limegreen
   );
 }
-.w-2 {
-  background: linear-gradient(
-    to right,
-    blue,
-    red,
-    orange,
-    rgb(255, 79, 109),
-    gray,
-    limegreen,
-    violet
-  );
-}
 #number,
 button {
   width: 35%;
@@ -149,7 +137,8 @@ button {
     font-size: 30px;
   }
   .website{
-    padding: 1.25%;
+    padding: 3.25%;
+    font-size: 30px;
   }
   #number,
   button {
@@ -160,5 +149,8 @@ button {
   }
   .about {
     font-size: 30px;
+  }
+  .website-title{
+    margin-bottom: 8%;
   }
 }
